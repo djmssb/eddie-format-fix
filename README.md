@@ -32,17 +32,17 @@
 
 ## 下载与安装
 
-到 [Releases](../../releases) 页面下载**全部 5 个分卷**（`.zip.001` ~ `.zip.005`）和 `合并并解压.bat`，放进同一个文件夹，双击 bat 即可 —— 它会自动合并、解压。
+到 [Releases](../../releases) 页面下载**全部 10 个分卷**（`.zip.001` ~ `.zip.010`）和 `合并并解压.bat`，放进同一个文件夹，双击 bat 即可 —— 它会自动合并、解压。
 
 不想用脚本的话，在分卷所在文件夹打开命令提示符，手动合并：
 
 ```bat
-copy /b Eddie-format-0.6.4-win-x64.zip.001+Eddie-format-0.6.4-win-x64.zip.002+Eddie-format-0.6.4-win-x64.zip.003+Eddie-format-0.6.4-win-x64.zip.004+Eddie-format-0.6.4-win-x64.zip.005 Eddie-format-0.6.4-win-x64.zip
+copy /b Eddie-format-0.6.4-win-x64.zip.001+Eddie-format-0.6.4-win-x64.zip.002+Eddie-format-0.6.4-win-x64.zip.003+Eddie-format-0.6.4-win-x64.zip.004+Eddie-format-0.6.4-win-x64.zip.005+Eddie-format-0.6.4-win-x64.zip.006+Eddie-format-0.6.4-win-x64.zip.007+Eddie-format-0.6.4-win-x64.zip.008+Eddie-format-0.6.4-win-x64.zip.009+Eddie-format-0.6.4-win-x64.zip.010 Eddie-format-0.6.4-win-x64.zip
 ```
 
-合并出来的 zip 用 7-Zip 或 Windows 自带解压都行。
+合并出来的 zip 约 775 MB，用 7-Zip 或 Windows 自带解压都行。
 
-> **为什么分卷**：完整包 775 MB，GitHub 的上传通道单次传大文件容易在中途断掉，切成 5 段更稳。分卷只是把原文件按字节切开，合并回来和原包完全一致。
+> **为什么分卷**：完整包 775 MB，GitHub 的上传通道单次 POST 有约 4 分钟硬超时，大文件必然传到一半被切断，只能切成小段逐段上传。分卷只是把原文件按字节切开，合并回来和原包完全一致（SHA-256 一样）。
 
 - 解压后体积约 2 GB，因为内置了 LibreOffice、FFmpeg、Poppler、Tesseract 四套离线引擎，**不需要另外装 Office 或 Python**。
 - 必须保留整个文件夹，`resources` 目录是转换引擎本体，只复制 exe 会缺功能。
