@@ -1,0 +1,4 @@
+dist/
+*.zip
+*.7z
+_pack.py
