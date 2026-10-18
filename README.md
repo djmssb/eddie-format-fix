@@ -32,9 +32,19 @@
 
 ## 下载与安装
 
-到 [Releases](../../releases) 页面下载 `Eddie-format-0.6.4-win-x64.zip`，解压后双击 `Eddie format.exe` 即可。
+到 [Releases](../../releases) 页面下载**全部 5 个分卷**（`.zip.001` ~ `.zip.005`）和 `合并并解压.bat`，放进同一个文件夹，双击 bat 即可 —— 它会自动合并、解压。
 
-- 体积较大（约 2 GB）是因为内置了 LibreOffice、FFmpeg、Poppler、Tesseract 四套离线引擎，**不需要另外装 Office 或 Python**。
+不想用脚本的话，在分卷所在文件夹打开命令提示符，手动合并：
+
+```bat
+copy /b Eddie-format-0.6.4-win-x64.zip.001+Eddie-format-0.6.4-win-x64.zip.002+Eddie-format-0.6.4-win-x64.zip.003+Eddie-format-0.6.4-win-x64.zip.004+Eddie-format-0.6.4-win-x64.zip.005 Eddie-format-0.6.4-win-x64.zip
+```
+
+合并出来的 zip 用 7-Zip 或 Windows 自带解压都行。
+
+> **为什么分卷**：完整包 775 MB，GitHub 的上传通道单次传大文件容易在中途断掉，切成 5 段更稳。分卷只是把原文件按字节切开，合并回来和原包完全一致。
+
+- 解压后体积约 2 GB，因为内置了 LibreOffice、FFmpeg、Poppler、Tesseract 四套离线引擎，**不需要另外装 Office 或 Python**。
 - 必须保留整个文件夹，`resources` 目录是转换引擎本体，只复制 exe 会缺功能。
 - 首次启动 Windows SmartScreen 可能提示未知发布者 —— 这是未签名程序的正常现象，选择"更多信息 → 仍要运行"。
 
